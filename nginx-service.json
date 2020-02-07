@@ -1,0 +1,22 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"nginx",
+      "labels":{
+         "app":"greenimage"
+      }
+   },
+   "spec":{
+      "ports": [
+         {
+           "port":80,
+           "targetPort":"http-server"
+         }
+      ],
+      "selector":{
+         "app":"greenimage"
+      },
+      "type": "LoadBalancer"
+   }
+}

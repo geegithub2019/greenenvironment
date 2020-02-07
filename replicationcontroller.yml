@@ -1,0 +1,23 @@
+---
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: greenimage
+  labels:
+    app: greenimage 
+spec:
+  replicas: 3
+  selector:
+    app: greenimage
+  template:
+    metadata:
+      labels:
+        app: greenimage
+    spec:
+      containers:
+      - name: greenimage
+        image: geepee2017/greenimage:latest
+        ports:
+        - name: http-server
+          containerPort: 80
+
